@@ -3,7 +3,7 @@ const User = require('../models/User');
 async function addUSer(req, res){
     try {
      const newUser = await User.create(req.body);
-     res.json(newUser)({message: 'User has been created'});   
+     res.status(200).json(newUser)({message: 'User has been created'});   
     } catch (error) {
       console.log('cant add data: ', error.message);
       res.status(401).json({message: 'Cant add data'});
