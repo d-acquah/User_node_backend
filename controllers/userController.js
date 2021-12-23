@@ -22,7 +22,7 @@ function updateUSerById(req, res){
 async function getUSerById(req, res){
 try {
   const user = await User.findById(req.params.userId)
-  res.status(200).json(user);
+  res.status(200).json({message: 'User has been created'});
 } catch (error) {
   console.log('cant get data: ', error.message);
 }
